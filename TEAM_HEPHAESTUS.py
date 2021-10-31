@@ -43,12 +43,17 @@ print("Enter N to close the program")
 
 ans = input()
 ans.lower()
-if(ans == 'y'):
+if ans == 'y':
     with open(path, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(total)
     print("changes updated")
 
     file.close()
+
+terminate = str(input("Enter x to terminate the program"))
+terminate.lower()
+if terminate == 'x':
+    pass
 
 

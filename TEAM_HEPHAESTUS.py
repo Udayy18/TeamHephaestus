@@ -38,9 +38,17 @@ for row in data:
     if count > (len(data)/100)*percent:
         print(percent, "% addresses verified")
         percent += 5
+print("Enter Y to save changes in the File")
+print("Enter N to close the program")
 
-with open(path, 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerows(total)
+ans = input()
+ans.lower()
+if(ans == 'y'):
+    with open(path, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(total)
+    print("changes updated")
 
-file.close()
+    file.close()
+
+
